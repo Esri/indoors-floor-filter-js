@@ -114,8 +114,10 @@ function(declare) {
                 const facilityName = util.getAttributeValue(attributes,facilityNameField);
                 const levelId = util.getAttributeValue(attributes,levelIdField);
                 const levelName = util.getAttributeValue(attributes,levelNameField);
+                if (typeof levelName === "undefined") reject("NAME field required on LEVELS Layer.")
                 const levelNumber = util.getAttributeValue(attributes,levelNumberField);
                 const levelShortName = util.getAttributeValue(feature.attributes,levelShortNameField);
+                if (typeof levelShortName === "undefined") reject("SHORT_NAME field required on LEVELS Layer.")
                 const vo = util.getAttributeValue(attributes,voField);
                 if (typeof facilityId === "string" && facilityId.length > 0) {
 
